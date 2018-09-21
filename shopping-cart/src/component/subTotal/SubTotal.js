@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import{Row,Column}from'react-bootstrap'
 
-export default class SubTotal extends Component {
+class SubTotal extends Component {
   render() {
     return (
       <Row className='show-grid'>
         <Col md={6}>SubTotal</Col>
-        <Col md={6}>{`$${this.props.price}`}</Col>
+        <Col md={6}>{`$${this.props.total}`}</Col>
       </Row>
     )
   }
