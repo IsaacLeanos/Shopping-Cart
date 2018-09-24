@@ -15,3 +15,12 @@
 .grid{
   border: 1px solid red;
 }
+
+.item-details-button:focus{
+  outline:white;
+}
+
+.price-strike{
+  text-decoration: line-through;
+  color:grey;
+}

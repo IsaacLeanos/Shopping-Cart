@@ -8,10 +8,6 @@ var styles={
     totalSaving:{
         color:'red',
         fontWeight:800
-    },
-    row:{
-        border:'1px solid blue',
-        marginTop:'1px'
     }
 }
 
