@@ -11,10 +11,22 @@ import PromoCode from './component/promoCode/PromoCode'
 
 class App extends Component {
   state={
-    total:100,
+    total:200,
     pickupSaving:-3.85,
     taxes:0,
-    estimatedTotal:0
+    estimatedTotal:0,
+    disablePromoButton:false
+  }
+
+  componentDidMount=()=>{
+    this.setState({
+      taxes:(this.state.total+this.state.pickupSaving)*0.0875,
+    },
+    function(){
+    this.setState({
+      estimatedTotal:this.state.total+this.state.pickupSaving+this.state.taxes
+    })
+  })
   }
 
   render() {
@@ -28,7 +40,8 @@ class App extends Component {
       <EstimatedTotal price={this.state.estimatedTotal.toFixed(2)}/>
       <ItemDetail price={this.state.estimatedTotal.toFixed(2)}/>
       <hr/>
-      <PromoCode/>
+      <PromoCode giveDiscount={()=>this.giveDiscountHandler()}
+                 isDisabled={this.state.disablePromoButton}/>
       </Grid>
       </div>
     );
